@@ -1,128 +1,142 @@
-*{
-    margin:0;
-    padding:0;
+* {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
-    font-family: 'Montserrat';
-    
+    font-family: 'Montserrat', sans-serif;
     color: white;
-    overflow: hidden; /* hide scrollbars*/    
+    overflow: hidden; /* Hide scrollbars */
 }
 
-.main{
+*::selection{
+    background-color: #73c26c;
+}
+body{
+    background-color: #000000;
+}
+.main {
     display: flex;
     height: 100vh;
-   
-
 }
 
-.sidebar{
+.sidebar {
     background-color: rgb(58, 58, 62);
-    width:300px;
-    border-radius: 1rem; /*16px*/
-    
-    background-color: black; 
-   
-}
-.main-cont{
-    background-color: rgb(58, 58, 62);
-    flex:1; /*this means to give rest space i.e not occupied by sidebar (baki bachi hui sare jaghe isko mil jaye) shorthand for grow,shrink and basis*/
-    border-radius: 1rem; /*16px*/
-    overflow: auto; /* we need to scroll here */
-    
-}
-
-.music-player{
-    background-color: black;
-    position:fixed;
+    width: 300px;
+    position: fixed;
+    top: 0;
+    left: 0;
     bottom: 0;
+    border-radius: 1rem; /* 16px */
+    background-color: black;
+    padding: 1rem;
+    overflow-y: auto; /* allows scrolling if sidebar content overflows */
+}
+
+.main-cont {
+    margin-left: 300px; /* To ensure content is not hidden behind sidebar */
+    background-color: rgb(58, 58, 62);
+    flex: 1; /*this means to give rest space i.e not occupied by sidebar (baki bachi hui sare jaghe isko mil jaye) shorthand for grow,shrink and basis*/
+    border-radius: 1rem;
+    overflow: auto; /* Allows scrolling in the main content */
+    padding: 1rem;
+}
+
+.music-player {
+    background-color: black;
+    position: fixed;
+    bottom: 0;
+    left: 0;
     width: 100%;
     height: 72px;
+    padding: 1rem;
 }
 
-.nav-option a{
+.nav-option a {
     text-decoration: none;
-
 }
 
-.nav{
+.nav {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    height: 100px;
-    padding: 0.5rem 0.75rem; /* 8px 12px */
-    border-radius: 1rem;;
+    padding: 0.5rem 0.75rem;
+    border-radius: 1rem;
     background-color: #484545;
 }
 
-.nav-option{
+.nav-option {
     line-height: 40px;
     opacity: 0.7;
     padding: 0.5rem 0.75rem;
 }
-.nav-option:hover{
+
+.nav-option:hover {
     opacity: 1;
 }
 
-.nav-option i{
+.nav-option i {
     font-size: 1.25rem;
 }
 
-.nav-option a{
+.nav-option a {
     font-size: 1.25rem;
     margin-left: 1rem;
 }
 
-.lib-boxes{
-    padding: 0.5rem 0.75rem;
-    margin-top: 0.3rem;
-    border-radius: 1rem;
-    height: 100%;
+.lib-boxes {
+    margin-top: 1rem;
     background-color: #484545;
+    border-radius: 1rem;
+   height: 28rem;
 }
-.opt{
+
+.opt {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 0.75rem;
 }
 
-
-.opt img{
+.opt img {
     height: 1.25rem;
     width: 1.25rem;
 }
 
-.icons{
+.icons {
     font-size: 1.25rem;
-   display: flex;
-    
+    display: flex;
 }
 
-.icons i{
+.icons i {
     opacity: 0.7;
     margin-right: 1rem;
 }
+.icons i:hover {
+    opacity: 1;
+  
+}
 
-.box{
+.box {
     height: 8rem;
     display: flex;
     flex-direction: column;
-    margin:0.5rem 0 0.5rem 0;
+    margin: 0.5rem 0;
     padding: 1rem 1.25rem;
+    background-color: #696363;
+    border-radius: 1rem;
 }
 
-.box-p1{
+.box-p1 {
     font-size: 1rem;
     font-weight: 700;
-    
     height: 2.5rem;
 }
-.box-p2{
+
+.box-p2 {
     font-size: 0.75rem;
     opacity: 0.9;
-    
 }
 
-.badge{
+.badge {
     background-color: #fff;
     color: black;
     border: none;
@@ -132,4 +146,34 @@
     height: 2rem;
     margin-top: 0.5rem;
     width: fit-content;
+}
+
+.sticky-nav{
+    display: flex;
+    position:sticky;
+    top: 0;
+    justify-content: space-between;
+   
+    background-color: rgb(58, 58, 62);
+
+}
+
+.btns{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 1.5rem;
+}
+
+.btns button{
+    margin-right: 1rem;
+}
+
+@media (max-width:1000px) {
+    .btns{
+        .hide{
+            display: none;
+        }
+      
+    }
 }
